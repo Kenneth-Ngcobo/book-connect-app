@@ -5,7 +5,7 @@ function BookApp() {
   return (
     <>
       <div>This is the our awesome app</div>
-      <BookPreview books={books} authors={authors}/>
+      <BookPreview books={books}/>
     </>
   );
 }

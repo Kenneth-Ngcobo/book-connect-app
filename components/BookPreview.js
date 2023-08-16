@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { BOOKS_PER_PAGE } from "@/data/data";
+import BookCard from "./BookCard";
 
 function BookPreview(props) {
-  const { books, authors } = props;
+  const { books } = props;
 
   const [page, setPage] = useState(BOOKS_PER_PAGE);
 
@@ -10,16 +11,7 @@ function BookPreview(props) {
 
   const remaining = books.length - booksShown.length;
 
-  const bookCard = booksShown.map((book) => (
-    <button key={book.id} className="preview">
-      <img className="preview__image" src={book.image} />
-
-      <div className="preview__info">
-        <h3 className="preview__title">{book.title}</h3>
-        <div className="preview__author">{authors[book.author]}</div>
-      </div>
-    </button>
-  ));
+  const bookCard = booksShown.map((book) => <BookCard key={book.id} book={book} />);
 
   const showMore = () => {
     setPage((prevPage) => {
