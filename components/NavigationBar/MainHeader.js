@@ -1,3 +1,8 @@
-export default function MainHeader(){
-    
-}
+
+
+export default function Header(){
+    return (
+      <Header></Header>
+      );
+    }
+
