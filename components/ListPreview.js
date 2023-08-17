@@ -3,8 +3,8 @@ import { books, BOOKS_PER_PAGE } from "@/data/data";
 import BookCard from "./BookCard";
 import ShowMore from "@/components/ShowMore";
 
-function BookPreview() {
-  const [page, setPage] = useState(BOOKS_PER_PAGE);
+function ListPreview() {
+  const [page, setPage] = useState(BOOKS_PER_PAGE); //initializes page which is then updated by ShowMore component
 
   const booksShown = books.slice(0, page);
 
@@ -12,7 +12,7 @@ function BookPreview() {
     <BookCard key={book.id} book={book} />
   ));
 
-  const booksToShow = (page) => {
+  const numberOfBooks = (page) => {
     setPage(page);
   };
 
@@ -31,11 +31,11 @@ function BookPreview() {
 
       <ShowMore
         booksLength={books.length}
-        booksToShow={booksToShow}
-        booksShown={booksShown}
+        numberOfBooks={numberOfBooks}
+        displayedLength={booksShown.length}
       />
     </main>
   );
 }
 
-export default BookPreview;
+export default ListPreview;
