@@ -19,8 +19,6 @@ function ShowMore(props) {
     booksToShow(page)
   }, [page]);
 
-  //
-
   return (
     <>
       {remaining > 0 && (
