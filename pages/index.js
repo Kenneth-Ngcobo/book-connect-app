@@ -1,11 +1,12 @@
-import BookPreview from "@/components/BookPreview";
-import { books, authors, genres } from "@/data/data";
+import ListPreview from "@/components/ListPreview";
 
 function BookApp() {
+
   return (
     <>
       <div>This is the our awesome app</div>
-      <BookPreview books={books} authors={authors}/>
+      <ListPreview />
+     
     </>
   );
 }
