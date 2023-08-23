@@ -8,15 +8,7 @@ function ListPreview() {
 
   const booksShown = books.slice(0, page);
 
-  const bookCard = booksShown.map((book) => {
-    //const bookWithAuthor = {...book, author: authors[book.author]}
-   
-    return <BookCard key={book.id} book={book} />;
-  });
-
-  /*useEffect(() => {
-    console.log('authors = ', authors)
-  },[])*/
+  const card = booksShown.map((book) => <BookCard key={book.id} book={book} />);
 
   const numberOfBooks = (page) => {
     setPage(page);
@@ -24,7 +16,7 @@ function ListPreview() {
 
   return (
     <main className="list">
-      <div className="list__items">{bookCard}</div>
+      <div className="list__items">{card}</div>
 
       <div
         className={`

@@ -5,7 +5,7 @@ import { useState } from "react";
 function BookCard(props) {
   const { book } = props;
   const bookWithAuthor = {...book, author: authors[book.author]}
-  //console.log(book)
+
   const [isOpen, setIsOpen] = useState(false)
 
   const showDetails = () => {
@@ -22,7 +22,7 @@ function BookCard(props) {
           <div className="preview__author">{bookWithAuthor.author}</div>
         </div>
       </button>
-      <BookCard closeModal={() => setIsOpen(false)} book={bookWithAuthor} isOpen={isOpen}/>
+      <BookPopUp closeModal={() => setIsOpen(false)} book={bookWithAuthor} isOpen={isOpen}/>
     </div>
   );
 }

@@ -11,9 +11,9 @@ import { useState } from 'react'
 function BookPopUp(props) {
   const { book, closeModal, isOpen } = props
 
-    
+  const year = new Date(book.published).getFullYear()
 
-  book.published = new Date(book.published).getFullYear()
+  const bookWithPublished = {...book, published: year}
 
   function handlePopUp () {
     //setIsOpen(!isOpen)
@@ -23,15 +23,15 @@ function BookPopUp(props) {
   return (
     <dialog className="overlay" open={isOpen}>
       <div className="overlay__preview">
-        <img className="overlay__blur"  src={book.image}/>
-        <img className="overlay__image" src={book.image}/>
+        <img className="overlay__blur"  src={bookWithPublished.image}/>
+        <img className="overlay__image" src={bookWithPublished.image}/>
       </div>
       <div className="overlay__content">
-        <h3 className="overlay__title">{book.title}</h3>
+        <h3 className="overlay__title">{bookWithPublished.title}</h3>
         <div className="overlay__data">
-          {book.author} ({book.published})
+          {bookWithPublished.author} ({bookWithPublished.published})
         </div>
-          <p className="overlay__data overlay__data_secondary">{book.description}</p>
+          <p className="overlay__data overlay__data_secondary">{bookWithPublished.description}</p>
       </div>
       <div className="overlay__row">
         <button className="overlay__button overlay__button_primary" onClick={handlePopUp}>Close</button>
