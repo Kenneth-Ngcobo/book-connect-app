@@ -1,21 +1,29 @@
 import { authors } from "@/data/data";
+import BookPopUp from "./BookPopUp";
+import { useState } from "react";
 
 function BookCard(props) {
-  const { book } = props
+  const { book } = props;
+  const bookWithAuthor = {...book, author: authors[book.author]}
+  //console.log(book)
+  const [isOpen, setIsOpen] = useState(false)
 
   const showDetails = () => {
-    console.log(book.title)
-  }
+    setIsOpen(true)
+  };
 
   return (
-    <button key={book.id} className="preview" onClick={showDetails}>
-      <img className="preview__image" src={book.image} />
+    <div>
+      <button key={bookWithAuthor.id} className="preview" onClick={showDetails}>
+        <img className="preview__image" src={bookWithAuthor.image} />
 
-      <div className="preview__info">
-        <h3 className="preview__title">{book.title}</h3>
-        <div className="preview__author">{authors[book.author]}</div>
-      </div>
-    </button>
+        <div className="preview__info">
+          <h3 className="preview__title">{bookWithAuthor.title}</h3>
+          <div className="preview__author">{bookWithAuthor.author}</div>
+        </div>
+      </button>
+      <BookCard closeModal={() => setIsOpen(false)} book={bookWithAuthor} isOpen={isOpen}/>
+    </div>
   );
 }
 
