@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { books, BOOKS_PER_PAGE } from "@/data/data";
+import { useEffect, useState } from "react";
+import { books, BOOKS_PER_PAGE, authors } from "@/data/data";
 import BookCard from "./BookCard";
 import ShowMore from "@/components/ShowMore";
 
@@ -8,9 +8,7 @@ function ListPreview() {
 
   const booksShown = books.slice(0, page);
 
-  const bookCard = booksShown.map((book) => (
-    <BookCard key={book.id} book={book} />
-  ));
+  const card = booksShown.map((book) => <BookCard key={book.id} book={book} />);
 
   const numberOfBooks = (page) => {
     setPage(page);
@@ -18,7 +16,7 @@ function ListPreview() {
 
   return (
     <main className="list">
-      <div className="list__items">{bookCard}</div>
+      <div className="list__items">{card}</div>
 
       <div
         className={`
