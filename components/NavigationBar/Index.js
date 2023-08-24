@@ -14,34 +14,6 @@ import {books,authors,genres} from '@/data/data';
  * @param {Filters} filters
  * @returns {Book[]}
  */
-export const filter = (books, filters) => {
-    let result = [];
-
-    for (const book of books) {
-        const titleMatch = filters.title.trim() === '' || book.title.toLowerCase().includes(filters.title.toLowerCase());
-        const authorMatch = filters.author === 'any' || book.author === filters.author;
-        let genreMatch = filters.genre === 'any';
-
-        for (const singleGenre of book.genres) {
-            if (genreMatch) break;
-
-            if (singleGenre === filters.genre) {
-                genreMatch = true;
-            }
-        }
-
-        if (titleMatch && authorMatch && genreMatch) {
-            result.push(book);
-        }
-    }
-
-    return result;
-};
-export const filters ={
-    title: '',
-    authors:'any',
-    genres:'any',
-}
 
 export const css = {
     day: {
