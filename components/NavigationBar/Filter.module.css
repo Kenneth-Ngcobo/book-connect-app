@@ -1,0 +1,38 @@
+.filter_container {
+  display: flex;
+  margin-top: 1%;
+  position: sticky;
+  top: 80px;
+  background-color: lightgray
+}
+
+.filter {
+  display: flex;
+  margin-left: 15%; 
+
+}
+
+
+.filter_input {
+  margin: 0 25px 0 5px;
+  height: 25px;
+  width: 250px;
+
+}
+
+.button {
+  margin: 0 5px;
+  height: 25px;
+  width: 100px;
+  background-color: white;
+  border-color: aqua;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: aqua;
+}
+
+.label {
+  font-weight: bold;
+}
