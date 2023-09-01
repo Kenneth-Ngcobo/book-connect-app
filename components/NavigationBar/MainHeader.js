@@ -33,7 +33,7 @@ export default function MainHeader(props) {
           </svg>
         </div>
         <div>
-          <button className="header__button" onClick={() => openFilter()}>
+          {/*<button className="header__button" onClick={() => openFilter()}>
             <svg
               className="header__icon"
               viewBox="0 96 960 960"
@@ -43,7 +43,7 @@ export default function MainHeader(props) {
                 d="M795 963 526 695q-29 22.923-68.459 35.962Q418.082 744 372 744q-115.162 0-195.081-80Q97 584 97 471t80-193q80-80 193.5-80t193 80Q643 358 643 471.15q0 44.85-12.5 83.35Q618 593 593 627l270 268-68 68ZM371.353 650q74.897 0 126.272-52.25T549 471q0-74.5-51.522-126.75T371.353 292q-75.436 0-127.895 52.25Q191 396.5 191 471t52.311 126.75Q295.623 650 371.353 650Z"
               ></path>
             </svg>
-          </button>
+          </button>*/}
 
           <button className="header__button" onClick={() => openTheme()}>
             <svg

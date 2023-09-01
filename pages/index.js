@@ -1,6 +1,7 @@
 import ListPreview from "@/components/ListPreview";
 import Filter from "@/components/NavigationBar/Filter";
 import MainHeader from "@/components/NavigationBar/MainHeader";
+import Theme from "@/components/NavigationBar/Theme";
 import { useState } from "react";
 
 function BookApp() {
@@ -27,6 +28,10 @@ function BookApp() {
         isFilterOpen={isFilterOpen}
         closeFilter={() => setIsFilterOpen(false)}
         updateBooks={updateBooks}
+      />
+      <Theme
+        isThemeOpen={isThemeOpen}
+        closeTheme={() => setIsThemeOpen(false)}
       />
       <ListPreview books={filteredBooks}/>
     </>

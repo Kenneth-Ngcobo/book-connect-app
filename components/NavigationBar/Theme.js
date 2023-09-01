@@ -1,13 +1,21 @@
 export default function Theme(props) {
   const { isThemeOpen, closeTheme } = props
+
+  const changeTheme = (event) => {
+    event.preventDefault()
+    const form = new FormData(event.target)
+    const data = Object.fromEntries(form)
+    console.log(data)
+  }
+
   return (
     <dialog className="overlay" open={isThemeOpen}>
       <div className="overlay__content">
-        <form className="overlay__form" data-settings-form id="settings">
+        <form className="overlay__form"  id="settings" onSubmit={changeTheme}>
           <label className="overlay__field">
             <div className="overlay__label">Theme</div>
 
-            <select className="overlay__input overlay__input_select" data-settings-theme name="theme">
+            <select className="overlay__input overlay__input_select"  name="theme">
               <option value="day">Day</option>
               <option value="night">Night</option>
             </select>
